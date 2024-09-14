@@ -1,0 +1,18 @@
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.15768656134605408, mae:0.14372460544109344, rse:0.3385419249534607
+
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.15768656134605408, mae:0.14372460544109344, rse:0.3385419249534607
+
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:0.044117521494627, mae:0.08104027062654495, rse:0.20687194168567657
+
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:0.03140363469719887, mae:0.08465655893087387, rse:0.15499959886074066
+
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:0.08255777508020401, mae:0.08946101367473602, rse:0.2398100644350052
+
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:0.13150794804096222, mae:0.12258527427911758, rse:0.3053160607814789
+

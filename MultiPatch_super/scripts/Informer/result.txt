@@ -1,0 +1,15 @@
+336_192_Informer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.4759356677532196, mae:0.37500885128974915, rse:0.5881515741348267
+
+336_192_Informer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:0.6152328848838806, mae:0.5814822316169739, rse:0.772530734539032
+
+336_192_Informer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:0.8275623917579651, mae:0.6115003228187561, rse:0.7956846952438354
+
+336_192_Informer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:0.3394373655319214, mae:0.3119673430919647, rse:0.4862596392631531
+
+336_192_Informer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:0.4881618618965149, mae:0.34931161999702454, rse:0.5882413387298584
+

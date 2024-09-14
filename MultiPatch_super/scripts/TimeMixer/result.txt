@@ -1,0 +1,15 @@
+336_192_TimeMixer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.17654988169670105, mae:0.1478603482246399, rse:0.3582192063331604
+
+336_192_TimeMixer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:0.05283976346254349, mae:0.09297491610050201, rse:0.2264000028371811
+
+336_192_TimeMixer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:0.034046340733766556, mae:0.08929024636745453, rse:0.16138972342014313
+
+336_192_TimeMixer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:0.09348548203706741, mae:0.09305897355079651, rse:0.2551881670951843
+
+336_192_TimeMixer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:0.15283611416816711, mae:0.13358008861541748, rse:0.32914453744888306
+

@@ -1,0 +1,15 @@
+336_192_iTransformer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.1781034767627716, mae:0.1537327617406845, rse:0.3597918748855591
+
+336_192_iTransformer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:0.047600485384464264, mae:0.08854527026414871, rse:0.21488283574581146
+
+336_192_iTransformer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:0.037527937442064285, mae:0.09911014884710312, rse:0.16944079101085663
+
+336_192_iTransformer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:0.09304624795913696, mae:0.09254308044910431, rse:0.25458797812461853
+
+336_192_iTransformer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:0.15402856469154358, mae:0.13412390649318695, rse:0.33042603731155396
+

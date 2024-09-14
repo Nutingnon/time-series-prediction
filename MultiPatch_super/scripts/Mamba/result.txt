@@ -1,0 +1,15 @@
+336_192_Mamba_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.14188973605632782, mae:0.14634715020656586, rse:0.3211371898651123
+
+336_192_Mamba_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:0.06176403537392616, mae:0.1141667366027832, rse:0.24477317929267883
+
+336_192_Mamba_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:0.07094145566225052, mae:0.15560224652290344, rse:0.23296500742435455
+
+336_192_Mamba_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:0.1401176154613495, mae:0.14074507355690002, rse:0.31241708993911743
+
+336_192_Mamba_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:0.140302836894989, mae:0.1356244534254074, rse:0.3153601884841919
+

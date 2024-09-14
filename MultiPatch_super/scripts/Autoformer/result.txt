@@ -1,0 +1,15 @@
+336_192_Autoformer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.2712908685207367, mae:0.22426317632198334, rse:0.4440508782863617
+
+336_192_Autoformer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:0.10300697386264801, mae:0.15773643553256989, rse:0.3161035180091858
+
+336_192_Autoformer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:0.0677972361445427, mae:0.15018436312675476, rse:0.22774381935596466
+
+336_192_Autoformer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:0.19268588721752167, mae:0.1920434981584549, rse:0.3663645088672638
+
+336_192_Autoformer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:0.24146148562431335, mae:0.19615671038627625, rse:0.4137114882469177
+
