@@ -16,3 +16,66 @@ mse:0.08255777508020401, mae:0.08946101367473602, rse:0.2398100644350052
 336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
 mse:0.13150794804096222, mae:0.12258527427911758, rse:0.3053160607814789
 
+336_192_MultiPatch_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.44236764311790466, mae:0.34968894720077515, rse:0.617557168006897
+
+336_192_MultiPatch_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:0.46789973974227905, mae:0.3560653328895569, rse:0.635128915309906
+
+336_192_MultiPatch_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:0.3691810965538025, mae:0.3097994327545166, rse:0.5641638040542603
+
+336_192_MultiPatch_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:0.4441709518432617, mae:0.3453834056854248, rse:0.6188145875930786
+
+336_192_MultiPatch_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:0.4073125720024109, mae:0.33365434408187866, rse:0.5925832986831665
+
+336_192_MultiPatch_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:1.4051004648208618, mae:0.6220892071723938, rse:0.7994801998138428
+
+336_192_MultiPatch_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:1.5025639533996582, mae:0.6512429714202881, rse:0.826742947101593
+
+336_192_MultiPatch_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:1.461683988571167, mae:0.6454430818557739, rse:0.8154188990592957
+
+336_192_MultiPatch_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:1.2193056344985962, mae:0.5715884566307068, rse:0.7447496652603149
+
+336_192_MultiPatch_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:1.3928065299987793, mae:0.6156634092330933, rse:0.7959749698638916
+
+336_192_MultiPatch_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:3.4595539569854736, mae:1.4950735569000244, rse:1.027266025543213
+
+336_192_MultiPatch_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:3.4733574390411377, mae:1.497750997543335, rse:1.029313325881958
+
+336_192_MultiPatch_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:3.4912872314453125, mae:1.4951753616333008, rse:1.0319665670394897
+
+336_192_MultiPatch_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:3.5301928520202637, mae:1.4822126626968384, rse:1.0377006530761719
+
+336_192_MultiPatch_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:3.4452812671661377, mae:1.5030312538146973, rse:1.0251448154449463
+
+336_192_MultiPatch_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:3.7144949436187744, mae:1.587319016456604, rse:1.0575628280639648
+
+336_192_MultiPatch_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:3.70068621635437, mae:1.5629113912582397, rse:1.0555952787399292
+
+336_192_MultiPatch_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:3.747960090637207, mae:1.5880671739578247, rse:1.0623161792755127
+
+336_192_MultiPatch_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:3.7178256511688232, mae:1.5672763586044312, rse:1.0580369234085083
+
+336_192_MultiPatch_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:3.734166145324707, mae:1.5566177368164062, rse:1.0603594779968262
+
+336_192_MultiPatch_one_for_one_pool_12_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.04391388222575188, mae:0.1113123670220375, rse:0.8683865666389465
+

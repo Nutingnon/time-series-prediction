@@ -1,3 +1,4 @@
+cd "$(dirname "$0")"
 if [ ! -d "./logs" ]; then
     mkdir ./logs
 fi
@@ -5,19 +6,20 @@ fi
 if [ ! -d "./logs/LongForecasting" ]; then
     mkdir ./logs/LongForecasting
 fi
-seq_len=336
+seq_len=$2    # 336
 model_name=Autoformer
 
 root_path_name=../../dataset/
-# data_path_name=train_dev1.csv
-# model_id_name=train_dev1
-# data_name=train_dev1
-data_path_name=filtered_dev.csv
-model_id_name=filtered_dev
-data_name=filtered_dev
+
+# data_path_name=filtered_dev.csv
+# model_id_name=filtered_dev
+# data_name=filtered_dev
+data_name=$1
+data_path_name=$data_name.csv
+model_id_name=$data_name
 
 random_seed=2021
-for pred_len in 192
+for pred_len in $3 # 192
 do
     python -u ../../run_longExp.py \
       --random_seed $random_seed \

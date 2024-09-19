@@ -30,7 +30,7 @@ class Dataset_Train_dev(Dataset):
     """
     def __init__(self, root_path, flag='train', size=None,
                     features='S', data_path='train_dev_8.csv',
-                    target='cpu_usage', scale=True, timeenc=0, freq='h'):
+                    target='cpu_usage', scale=True, timeenc=0, freq='h', mode='one_for_all'):
         """
         Initializes the dataset by setting parameters and loading data from the specified path.
         
@@ -72,6 +72,7 @@ class Dataset_Train_dev(Dataset):
 
         self.root_path = root_path
         self.data_path = data_path
+        self.mode = mode
         self.__read_data__()
 
     def __read_data__(self):
@@ -80,136 +81,125 @@ class Dataset_Train_dev(Dataset):
         """
         self.scaler = StandardScaler()
         df_raw = pd.read_csv(os.path.join(self.root_path, self.data_path))
-        # print("df_raw:::", df_raw.head(10))
+        self.value_columns = df_raw.columns[2:]
+        if self.mode == 'one_for_all':
+            pool_ids = df_raw['pool_id'].unique()
+            test_pool_id: List = np.random.choice(pool_ids, 3, replace=False).tolist()
+            valid_pool_id = test_pool_id.pop()
+            df_train = df_raw.loc[~df_raw['pool_id'].isin(test_pool_id),:]
+            df_test = df_raw.loc[df_raw['pool_id'].isin(test_pool_id), :]
+            df_valid = df_raw.loc[df_raw['pool_id']==valid_pool_id, :]
+            self.df_train = df_train.reset_index(drop=True)
+            self.df_test = df_test.reset_index(drop=True)
+            self.df_valid = df_valid.reset_index(drop=True)
 
+            num_train = self.df_train.shape[0]
+            num_test = self.df_test.shape[0]
+            num_vali = self.df_valid.shape[0]
+            border1s = [0, num_train - self.seq_len, num_train + num_vali - self.seq_len]
+            border2s = [num_train, num_train + num_vali, num_train+num_vali+num_test]
+            border1 = border1s[self.set_type]
+            border2 = border2s[self.set_type]
+            columns = self.df_train.columns
+            # value_columns = columns[2:]
 
-        pool_ids = df_raw['pool_id'].unique()
-        test_pool_id: List = np.random.choice(pool_ids, 3, replace=False).tolist()
-        valid_pool_id = test_pool_id.pop()
-        df_train = df_raw.loc[~df_raw['pool_id'].isin(test_pool_id),:]
-        df_test = df_raw.loc[df_raw['pool_id'].isin(test_pool_id), :]
-        df_valid = df_raw.loc[df_raw['pool_id']==valid_pool_id, :]
-        self.df_train = df_train.reset_index(drop=True)
-        self.df_test = df_test.reset_index(drop=True)
-        self.df_valid = df_valid.reset_index(drop=True)
+            if self.features == 'M' or self.features == 'MS':
+                # cols_data = df_raw.columns[2:]  # Exclude timestamp 
+                # df_data = df_raw[cols_data]
+                pass
+            elif self.features == 'S':
+                self.df_train = self.df_train.loc[:, columns[:2] + [self.target]]
+                self.df_test = self.df_test.loc[:, columns[:2] + [self.target]]
+                self.df_valid = self.df_valid.loc[:, columns[:2] + [self.target]]
 
+            if self.scale:
+                self.df_train.loc[:, self.value_columns] = self.scaler.fit_transform(self.df_train.loc[:, self.value_columns])
+                self.df_test.loc[:, self.value_columns] = self.scaler.fit_transform(self.df_test.loc[:, self.value_columns])
+                self.df_valid.loc[:, self.value_columns] = self.scaler.fit_transform(self.df_valid.loc[:, self.value_columns])
 
-        # num_train = int(len(df_raw) * 0.7)
-        # num_test = int(len(df_raw) * 0.2)
-        # num_vali = len(df_raw) - num_train - num_test
-        # border1s = [0, num_train - self.seq_len, len(df_raw) - num_test - self.seq_len] # for train & validation, [0, 61431, 70256]
-        # border2s = [num_train, num_train + num_vali, len(df_raw)] # for validation & test [61767, 70592, 88239]
-        # border1 = border1s[self.set_type] # train = 0 -- 0 | start ?
-        # border2 = border2s[self.set_type] # train = 0 -- num_train | end ?
-
-
-        num_train = self.df_train.shape[0]
-        num_test = self.df_test.shape[0]
-        num_vali = self.df_valid.shape[0]
-        border1s = [0, num_train - self.seq_len, num_train+num_vali - self.seq_len]
-        border2s = [num_train, num_train + num_vali, num_train+num_vali+num_test]
-        border1 = border1s[self.set_type]
-        border2 = border2s[self.set_type]
-
-        columns = self.df_train.columns
-        value_columns = columns[2:]
-        # yixin change start
-        if self.features == 'M' or self.features == 'MS':
-            # cols_data = df_raw.columns[2:]  # Exclude timestamp 
-            # df_data = df_raw[cols_data]
-            pass
-        elif self.features == 'S':
-            self.df_train = self.df_train.loc[:, columns[:2] + [self.target]]
-            self.df_test = self.df_test.loc[:, columns[:2] + [self.target]]
-            self.df_valid = self.df_valid.loc[:, columns[:2] + [self.target]]
-
-        if self.scale:
-            # train_data = df_data[border1s[0]:border2s[0]]
-            # self.scaler.fit(self.df_train.loc[:, value_columns])
-            self.df_train.loc[:, value_columns] = self.scaler.fit_transform(self.df_train.loc[:, value_columns])
-            self.df_test.loc[:, value_columns] = self.scaler.fit_transform(self.df_test.loc[:, value_columns])
-            self.df_valid.loc[:, value_columns] = self.scaler.fit_transform(self.df_valid.loc[:, value_columns])
-
-
-        # df_stamp = df_raw[['timestamp']][border1:border2]
-        df_stamp = dict()
-        data_stamp = dict()
-        df_stamp['train'] = self.df_train[['timestamp']]
-        df_stamp['val'] = self.df_valid[['timestamp']]
-        df_stamp['test'] = self.df_test[['timestamp']]
-        for key in df_stamp.keys():
-            df_stamp[key]['timestamp'] = pd.to_datetime(df_stamp[key]['timestamp'], unit='s')
-
-
-        if self.timeenc == 0:
+            # df_stamp = df_raw[['timestamp']][border1:border2]
+            df_stamp = dict()
+            data_stamp = dict()
+            df_stamp['train'] = self.df_train[['timestamp']]
+            df_stamp['val'] = self.df_valid[['timestamp']]
+            df_stamp['test'] = self.df_test[['timestamp']]
             for key in df_stamp.keys():
-                df_stamp[key]['month'] = df_stamp[key].timestamp.apply(lambda row: row.month)
-                df_stamp[key]['day'] = df_stamp[key].timestamp.apply(lambda row: row.day)
-                df_stamp[key]['weekday'] = df_stamp[key].timestamp.apply(lambda row: row.weekday())
-                df_stamp[key]['hour'] = df_stamp[key].timestamp.apply(lambda row: row.hour)
-                data_stamp[key] = df_stamp[key].drop(['timestamp'], axis=1).values
+                df_stamp[key]['timestamp'] = pd.to_datetime(df_stamp[key]['timestamp'], unit='s')
+            if self.timeenc == 0:
+                for key in df_stamp.keys():
+                    df_stamp[key]['month'] = df_stamp[key].timestamp.apply(lambda row: row.month)
+                    df_stamp[key]['day'] = df_stamp[key].timestamp.apply(lambda row: row.day)
+                    df_stamp[key]['weekday'] = df_stamp[key].timestamp.apply(lambda row: row.weekday())
+                    df_stamp[key]['hour'] = df_stamp[key].timestamp.apply(lambda row: row.hour)
+                    data_stamp[key] = df_stamp[key].drop(['timestamp'], axis=1).values
+            elif self.timeenc == 1:
+                for key in df_stamp.keys():
+                    data_stamp[key] = time_features(pd.to_datetime(df_stamp[key]['timestamp'].values), freq=self.freq)
+                    data_stamp[key] = data_stamp[key].transpose(1, 0)
 
-
-        elif self.timeenc == 1:
-            for key in df_stamp.keys():
-                data_stamp[key] = time_features(pd.to_datetime(df_stamp[key]['timestamp'].values), freq=self.freq)
-                data_stamp[key] = data_stamp[key].transpose(1, 0)
-
-        self.data_stamp_all = data_stamp
-        self.data_stamp = self.data_stamp_all[self.flag]
-
-        # self.data_x = self.df_train
-        # self.data_y = self.df_train
-
-        if self.set_type == 0:
-            self.data_x = self.df_train
-            self.data_y = self.df_train
-        elif self.set_type == 1:
-            self.data_x = self.df_valid
-            self.data_y = self.df_valid
-            
-        elif self.set_type == 2:
-            self.data_x = self.df_test
-            self.data_y = self.df_test
-
-        self.data_x.reset_index(inplace=True,drop=True)
-        self.data_y.reset_index(inplace=True,drop=True)
-
-        print("self.data_x:",self.data_x.head())
-        print("self.data_stamp:",self.data_stamp[:5])
+            self.data_stamp_all = data_stamp
+            self.data_stamp = self.data_stamp_all[self.flag]
+            if self.set_type == 0:
+                self.data_x = self.df_train
+                self.data_y = self.df_train
+            elif self.set_type == 1:
+                self.data_x = self.df_valid
+                self.data_y = self.df_valid
+                
+            elif self.set_type == 2:
+                self.data_x = self.df_test
+                self.data_y = self.df_test
+            self.data_x.reset_index(inplace=True,drop=True)
+            self.data_y.reset_index(inplace=True,drop=True)
+            print("self.data_x:",self.data_x.head())
+            print("self.data_stamp:",self.data_stamp[:5])
 
 
 
-        # yixin change end
+        # one for one
+        elif self.mode=="one_for_one":
+            num_train = int(len(df_raw) * 0.7)
+            num_test = int(len(df_raw) * 0.2)
+            num_vali = len(df_raw) - num_train - num_test
+            border1s = [0, num_train - self.seq_len, len(df_raw) - num_test - self.seq_len] 
+            border2s = [num_train, num_train + num_vali, len(df_raw)] 
+            border1 = border1s[self.set_type] # train = 0 -- 0 | start ?
+            border2 = border2s[self.set_type] # train = 0 -- num_train | end ?
 
-        # if self.features == 'M' or self.features == 'MS':
-        #     cols_data = df_raw.columns[2:]  # Exclude timestamp 
-        #     df_data = df_raw[cols_data]
-        # elif self.features == 'S':
-        #     df_data = df_raw[[self.target]]
+            if self.features == 'M' or self.features == 'MS':
+                # value_columns = df_raw.columns[2:]  # Exclude timestamp 
+                df_data = df_raw.reset_index(drop=True)
+                
+            elif self.features == 'S':
+                df_data = df_raw.loc[:, [df_raw.columns[0], df_raw.columns[1], self.target]].reset_index(drop=True)
 
-        # if self.scale:
-        #     train_data = df_data[border1s[0]:border2s[0]]
-        #     self.scaler.fit(train_data.values)
-        #     data = self.scaler.transform(df_data.values)
-        # else:
-        #     data = df_data.values
+            if self.scale:
+                df_data.loc[:, self.value_columns] = self.scaler.fit_transform(df_data.loc[:, self.value_columns])
+                # df_data = self.scaler.transform(df_data.values)
+            else:
+                pass
 
-        # df_stamp = df_raw[['timestamp']][border1:border2]
-        # df_stamp['timestamp'] = pd.to_datetime(df_stamp.timestamp, unit='s')
-        # if self.timeenc == 0:
-        #     df_stamp['month'] = df_stamp.timestamp.apply(lambda row: row.month)
-        #     df_stamp['day'] = df_stamp.timestamp.apply(lambda row: row.day)
-        #     df_stamp['weekday'] = df_stamp.timestamp.apply(lambda row: row.weekday())
-        #     df_stamp['hour'] = df_stamp.timestamp.apply(lambda row: row.hour)
-        #     data_stamp = df_stamp.drop(['timestamp'], axis=1).values
-        # elif self.timeenc == 1:
-        #     data_stamp = time_features(pd.to_datetime(df_stamp['timestamp'].values), freq=self.freq)
-        #     data_stamp = data_stamp.transpose(1, 0)
 
-        # self.data_x = data[border1:border2]
-        # self.data_y = data[border1:border2]# here self.data_x == self.data_y
-        # self.data_stamp = data_stamp
+            df_stamp = df_raw[['timestamp']][border1: border2].reset_index(drop=True)
+            print("df_stamp shape before change:", df_stamp.shape)
+            df_stamp['timestamp'] = pd.to_datetime(df_stamp.timestamp, unit='s')
+            if self.timeenc == 0:
+                df_stamp['month'] = df_stamp.timestamp.apply(lambda row: row.month)
+                df_stamp['day'] = df_stamp.timestamp.apply(lambda row: row.day)
+                df_stamp['weekday'] = df_stamp.timestamp.apply(lambda row: row.weekday())
+                df_stamp['hour'] = df_stamp.timestamp.apply(lambda row: row.hour)
+                data_stamp = df_stamp.drop(['timestamp'], axis=1).values
+            elif self.timeenc == 1:
+                data_stamp = time_features(pd.to_datetime(df_stamp['timestamp'].values), freq=self.freq)
+                data_stamp = data_stamp.transpose(1, 0)
+
+            self.data_x = df_data.iloc[border1:border2, :].reset_index(drop=True)
+            self.data_y = df_data.iloc[border1:border2, :].reset_index(drop=True) # here self.data_x == self.data_y
+            self.data_stamp = data_stamp
+
+            # print("self.data_x:",self.data_x.shape)
+            # print("self.data_stamp:",self.data_stamp.shape)
+
 
     def __getitem__(self, index):
         """
@@ -270,9 +260,9 @@ class Dataset_Train_dev(Dataset):
             error_ += f"index: {index}, \n"
             error_ += f"data_y: {self.data_y.iloc[r_begin:r_end, 0].value_counts()} \n"
             error_ += f"data_x: {self.data_x.iloc[s_begin:s_end, 0].value_counts()}, \n"
-            error_ += f"move_length:{move_length}"            
+            error_ += f"move_length:{move_length}"
+            assert self.data_x.iloc[s_begin:r_end, 0].nunique() < 2, error_
 
-        assert self.data_x.iloc[s_begin:r_end, 0].nunique() < 2, error_
 
         seq_x = self.data_x.iloc[s_begin:s_end, 2:].values
         seq_y = self.data_y.iloc[r_begin:r_end, 2:].values
@@ -281,6 +271,8 @@ class Dataset_Train_dev(Dataset):
         # yixin change end
         # if self.flag=='test':
         #     print(len(seq_x),'-',len(seq_y),'-', len(seq_x_mark),'-', len(seq_y_mark),'=========')
+        # print(len(seq_x),'-',len(seq_y),'-', len(seq_x_mark),'-', len(seq_y_mark),'=========')
+
 
         return seq_x, seq_y, seq_x_mark, seq_y_mark
 

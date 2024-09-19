@@ -212,7 +212,8 @@ class Exp_Main(Exp_Basic):
             train_loss = np.average(train_loss)
             vali_loss = self.vali(vali_data, vali_loader, criterion)
             test_loss = self.vali(test_data, test_loader, criterion)
-            test_pool_ids = test_data.df_test['pool_id'].unique()
+            # test_pool_ids = test_data.df_test['pool_id'].unique() # for one_for_all
+            test_pool_ids = test_data.data_x['pool_id'].unique() # for one_for_one
 
             print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f} Test Loss: {4:.7f} Test pool id: {5}".format(
                 epoch + 1, train_steps, train_loss, vali_loss, test_loss, test_pool_ids))

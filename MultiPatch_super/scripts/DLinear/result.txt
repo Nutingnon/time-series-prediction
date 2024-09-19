@@ -28,3 +28,63 @@ mse:0.09623250365257263, mae:0.10813241451978683, rse:0.25891029834747314
 336_192_DLinear_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
 mse:0.15020377933979034, mae:0.13337227702140808, rse:0.3262977600097656
 
+336_192_DLinear_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.4246925115585327, mae:0.38715654611587524, rse:0.6050938963890076
+
+336_192_DLinear_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:0.4266105890274048, mae:0.38995179533958435, rse:0.6064587831497192
+
+336_192_DLinear_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:0.42884907126426697, mae:0.39340096712112427, rse:0.6080477833747864
+
+336_192_DLinear_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:0.43020394444465637, mae:0.39480453729629517, rse:0.6090075373649597
+
+336_192_DLinear_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:0.42825421690940857, mae:0.39240556955337524, rse:0.6076259613037109
+
+336_192_DLinear_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:1.3889660835266113, mae:0.6985452771186829, rse:0.7948768734931946
+
+336_192_DLinear_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:2.1432313919067383, mae:0.9093324542045593, rse:0.9873896241188049
+
+336_192_DLinear_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:2.138359308242798, mae:0.9077416658401489, rse:0.9862667322158813
+
+336_192_DLinear_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:1.5153394937515259, mae:0.6627326011657715, rse:0.8302502036094666
+
+336_192_DLinear_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:1.512453317642212, mae:0.660412609577179, rse:0.8294591903686523
+
+336_192_DLinear_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:3.3859646320343018, mae:1.5750741958618164, rse:1.0162816047668457
+
+336_192_DLinear_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:3.3755269050598145, mae:1.5736323595046997, rse:1.014714002609253
+
+336_192_DLinear_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:3.3801839351654053, mae:1.571533203125, rse:1.015413761138916
+
+336_192_DLinear_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:3.396149158477783, mae:1.5758312940597534, rse:1.0178089141845703
+
+336_192_DLinear_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:3.4826908111572266, mae:1.5303417444229126, rse:1.0306954383850098
+
+336_192_DLinear_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:3.5115458965301514, mae:1.638037919998169, rse:1.0282659530639648
+
+336_192_DLinear_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:3.5039472579956055, mae:1.636051893234253, rse:1.0271527767181396
+
+336_192_DLinear_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:3.5162317752838135, mae:1.636301875114441, rse:1.0289517641067505
+
+336_192_DLinear_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:3.511493444442749, mae:1.6363445520401, rse:1.0282583236694336
+
+336_192_DLinear_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:3.5106136798858643, mae:1.63542902469635, rse:1.0281294584274292
+

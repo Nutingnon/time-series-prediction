@@ -12,9 +12,9 @@ root_path_name=../../dataset/
 # data_path_name=train_dev1.csv
 # model_id_name=train_dev1
 # data_name=train_dev1
-data_path_name=filtered_dev.csv
-model_id_name=filtered_dev
-data_name=filtered_dev
+data_name=$1
+data_path_name=$data_name.csv
+model_id_name=$data_name
 
 random_seed=2021
 for pred_len in 192

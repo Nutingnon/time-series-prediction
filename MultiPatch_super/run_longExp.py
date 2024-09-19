@@ -92,7 +92,7 @@ parser.add_argument('--channel_independence', type=int, default=1,
 parser.add_argument('--use_norm', type=int, default=1, help='whether to use normalize; True 1 False 0')
 
 # optimization
-parser.add_argument('--num_workers', type=int, default=10, help='data loader num workers')
+parser.add_argument('--num_workers', type=int, default=20, help='data loader num workers') # default set to 10, debug set to 0
 parser.add_argument('--itr', type=int, default=2, help='experiments times')
 parser.add_argument('--train_epochs', type=int, default=50, help='train epochs')
 parser.add_argument('--batch_size', type=int, default=128, help='batch size of train input data')
@@ -110,6 +110,10 @@ parser.add_argument('--gpu', type=int, default=0, help='gpu')
 parser.add_argument('--use_multi_gpu', action='store_true', help='use multiple gpus', default=False)
 parser.add_argument('--devices', type=str, default='0,1,2,3', help='device ids of multile gpus')
 parser.add_argument('--test_flop', action='store_true', default=False, help='See utils/tools for usage')
+
+# dataset type
+parser.add_argument('--mode', type=str, default='one_for_one', help='one_for_one or one_for_all')
+
 
 args = parser.parse_args()
 

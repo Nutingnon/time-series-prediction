@@ -15,6 +15,18 @@ data_dict = {
     'filtered_dev': Dataset_Train_dev,
     'train_dev_8': Dataset_Train_dev,
     'train_time': Dataset_Train_dev,
+    "one_for_one_pool_1":Dataset_Train_dev,
+    "one_for_one_pool_4":Dataset_Train_dev,
+    "one_for_one_pool_8":Dataset_Train_dev,
+    "one_for_one_pool_9":Dataset_Train_dev,
+    "one_for_one_pool_12":Dataset_Train_dev,
+    "one_for_one_pool_13":Dataset_Train_dev,
+    "one_for_one_pool_14":Dataset_Train_dev,
+    "one_for_one_pool_16":Dataset_Train_dev,
+    "one_for_one_pool_20":Dataset_Train_dev,
+    "one_for_one_pool_23":Dataset_Train_dev,
+    "one_for_one_pool_24":Dataset_Train_dev,
+    "one_for_one_pool_26":Dataset_Train_dev
 }
 
 
@@ -47,8 +59,9 @@ def data_provider(args, flag):
         features=args.features, # M
         target=args.target, # OT
         timeenc=timeenc,
-        freq=freq
-    )
+        freq=freq,
+        mode=args.mode) # 'one_for_all' or 'one_for_one' in Dataset_Train_dev
+    
     print(flag, len(data_set))
     data_loader = DataLoader(
         data_set,

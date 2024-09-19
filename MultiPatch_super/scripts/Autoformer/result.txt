@@ -13,3 +13,69 @@ mse:0.19268588721752167, mae:0.1920434981584549, rse:0.3663645088672638
 336_192_Autoformer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
 mse:0.24146148562431335, mae:0.19615671038627625, rse:0.4137114882469177
 
+336_192_Autoformer_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.7567391395568848, mae:0.4943431615829468, rse:0.8077157735824585
+
+336_192_Autoformer_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.7567391395568848, mae:0.4943431615829468, rse:0.8077157735824585
+
+336_192_Autoformer_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:0.7659281492233276, mae:0.49325090646743774, rse:0.8126050233840942
+
+336_192_Autoformer_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:0.7597295045852661, mae:0.47911861538887024, rse:0.8093101382255554
+
+336_192_Autoformer_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:0.7725647687911987, mae:0.5096505284309387, rse:0.8161179423332214
+
+336_192_Autoformer_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:0.7690629363059998, mae:0.5110714435577393, rse:0.8142662048339844
+
+336_192_Autoformer_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:2.417433738708496, mae:0.9866942167282104, rse:1.0486518144607544
+
+336_192_Autoformer_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:2.5418710708618164, mae:1.0190950632095337, rse:1.0753027200698853
+
+336_192_Autoformer_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:2.570533275604248, mae:1.029526710510254, rse:1.0813484191894531
+
+336_192_Autoformer_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:2.5329089164733887, mae:1.011597752571106, rse:1.0734055042266846
+
+336_192_Autoformer_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:2.512321710586548, mae:1.0133386850357056, rse:1.0690343379974365
+
+336_192_Autoformer_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:3.6277713775634766, mae:1.4993990659713745, rse:1.0519444942474365
+
+336_192_Autoformer_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:3.6247315406799316, mae:1.4999018907546997, rse:1.0515036582946777
+
+336_192_Autoformer_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:3.627122402191162, mae:1.4998571872711182, rse:1.051850438117981
+
+336_192_Autoformer_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:3.6196560859680176, mae:1.500638723373413, rse:1.0507673025131226
+
+336_192_Autoformer_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:3.630357027053833, mae:1.4976084232330322, rse:1.0523192882537842
+
+336_192_Autoformer_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:3.5820493698120117, mae:1.4540071487426758, rse:1.0385372638702393
+
+336_192_Autoformer_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:3.5777111053466797, mae:1.4439072608947754, rse:1.0379081964492798
+
+336_192_Autoformer_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:3.5342869758605957, mae:1.482909917831421, rse:1.0315901041030884
+
+336_192_Autoformer_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:3.5950767993927, mae:1.4582017660140991, rse:1.040424108505249
+
+336_192_Autoformer_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:3.5410468578338623, mae:1.4792994260787964, rse:1.0325762033462524
+
+336_192_Autoformer_one_for_one_pool_12_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.12529949843883514, mae:0.23225893080234528, rse:1.4668538570404053
+

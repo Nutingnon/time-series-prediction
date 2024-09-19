@@ -13,3 +13,66 @@ mse:0.09348548203706741, mae:0.09305897355079651, rse:0.2551881670951843
 336_192_TimeMixer_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
 mse:0.15283611416816711, mae:0.13358008861541748, rse:0.32914453744888306
 
+336_192_TimeMixer_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.512645423412323, mae:0.39276939630508423, rse:0.6648046374320984
+
+336_192_TimeMixer_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:0.4617305397987366, mae:0.3483773171901703, rse:0.6309279799461365
+
+336_192_TimeMixer_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:0.5659343004226685, mae:0.41252195835113525, rse:0.698503315448761
+
+336_192_TimeMixer_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:0.48652344942092896, mae:0.3754710555076599, rse:0.6476455330848694
+
+336_192_TimeMixer_one_for_one_pool_1_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:0.43371930718421936, mae:0.34765490889549255, rse:0.6114907264709473
+
+336_192_TimeMixer_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:1.356418490409851, mae:0.6563113331794739, rse:0.7855085134506226
+
+336_192_TimeMixer_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:1.3689541816711426, mae:0.6504366397857666, rse:0.789129912853241
+
+336_192_TimeMixer_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:1.4075807332992554, mae:0.6414593458175659, rse:0.80018550157547
+
+336_192_TimeMixer_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:1.3495519161224365, mae:0.6451576948165894, rse:0.7835177779197693
+
+336_192_TimeMixer_one_for_one_pool_4_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:1.335021734237671, mae:0.6310862302780151, rse:0.7792883515357971
+
+336_192_TimeMixer_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:3.5566303730010986, mae:1.4285250902175903, rse:1.041579008102417
+
+336_192_TimeMixer_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:3.49812388420105, mae:1.495055079460144, rse:1.0329766273498535
+
+336_192_TimeMixer_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:3.598069667816162, mae:1.4627618789672852, rse:1.0476293563842773
+
+336_192_TimeMixer_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:3.4977221488952637, mae:1.4786760807037354, rse:1.0329172611236572
+
+336_192_TimeMixer_one_for_one_pool_8_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:3.5656628608703613, mae:1.446251630783081, rse:1.042900800704956
+
+336_192_TimeMixer_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:3.598388195037842, mae:1.514573097229004, rse:1.040903091430664
+
+336_192_TimeMixer_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:3.544952392578125, mae:1.5571895837783813, rse:1.033145546913147
+
+336_192_TimeMixer_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:3.601935863494873, mae:1.5074466466903687, rse:1.041416049003601
+
+336_192_TimeMixer_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:3.5437941551208496, mae:1.5326937437057495, rse:1.032976746559143
+
+336_192_TimeMixer_one_for_one_pool_9_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:3.7847864627838135, mae:1.5006605386734009, rse:1.067522406578064
+
+336_192_TimeMixer_one_for_one_pool_12_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.04523157328367233, mae:0.10895608365535736, rse:0.8813187479972839
+
