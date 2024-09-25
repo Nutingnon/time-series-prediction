@@ -142,12 +142,12 @@ class Model(nn.Module):
     def encoder(self, x):
         seasonal_init, trend_init = self.decompsition(x)
         seasonal_init, trend_init = seasonal_init.permute(
-            0, 2, 1), trend_init.permute(0, 2, 1)
+            0, 2, 1), trend_init.permute(0, 2, 1) # b, l, c --> b, c, l
         if self.individual:
             seasonal_output = torch.zeros([seasonal_init.size(0), seasonal_init.size(1), self.pred_len],
-                                          dtype=seasonal_init.dtype).to(seasonal_init.device)
+                                        dtype=seasonal_init.dtype).to(seasonal_init.device)
             trend_output = torch.zeros([trend_init.size(0), trend_init.size(1), self.pred_len],
-                                       dtype=trend_init.dtype).to(trend_init.device)
+                                        dtype=trend_init.dtype).to(trend_init.device)
             for i in range(self.channels):
                 seasonal_output[:, i, :] = self.Linear_Seasonal[i](
                     seasonal_init[:, i, :])

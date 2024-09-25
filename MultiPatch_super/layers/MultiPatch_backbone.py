@@ -15,25 +15,27 @@ from layers.RevIN import RevIN
 # Cell
 class MultiPatch_backbone(nn.Module):
     def __init__(self, c_in:int, context_window:int, target_window:int, patch_len:str, stride:int, max_seq_len:Optional[int]=1024,
-                 n_layers:int=3, d_model=128, n_heads=16, d_k:Optional[int]=None, d_v:Optional[int]=None,
-                 d_ff:int=256, norm:str='BatchNorm', attn_dropout:float=0., dropout:float=0., act:str="gelu", key_padding_mask:bool='auto',
-                 padding_var:Optional[int]=None, attn_mask:Optional[Tensor]=None, res_attention:bool=True, pre_norm:bool=False, store_attn:bool=False,
-                 pe:str='zeros', learn_pe:bool=True, fc_dropout:float=0., head_dropout = 0, padding_patch = None,
-                 pretrain_head:bool=False, head_type = 'flatten', individual = False, revin = True, affine = True, subtract_last = False,
-                 verbose:bool=False, **kwargs):
+                n_layers:int=3, d_model=128, n_heads=16, d_k:Optional[int]=None, d_v:Optional[int]=None,
+                d_ff:int=256, norm:str='BatchNorm', attn_dropout:float=0., dropout:float=0., act:str="gelu", key_padding_mask:bool='auto',
+                padding_var:Optional[int]=None, attn_mask:Optional[Tensor]=None, res_attention:bool=True, pre_norm:bool=False, store_attn:bool=False,
+                pe:str='zeros', learn_pe:bool=True, fc_dropout:float=0., head_dropout = 0, padding_patch = None,
+                pretrain_head:bool=False, head_type = 'flatten', individual = False, revin = True, affine = True, subtract_last = False,
+                verbose:bool=False, **kwargs):
 
         super().__init__()
 
         # RevIn
         self.revin = revin
-        if self.revin: self.revin_layer = RevIN(c_in, affine=affine, subtract_last=subtract_last)
-        self.patch_len = patch_len
-        self.stride = stride
-        self.padding_patch = padding_patch
+        if self.revin: 
+            self.revin_layer = RevIN(c_in, affine=affine, subtract_last=subtract_last)
+        self.patch_len = patch_len # '357'
+        self.stride = stride # 8 
+        self.padding_patch = padding_patch # 'end'
         self.n_vars = c_in
         self.pretrain_head = pretrain_head
         self.head_type = head_type
         self.individual = individual
+
         # Patching
         self.backbones = nn.ModuleList()
         self.heads = nn.ModuleList()
@@ -46,10 +48,10 @@ class MultiPatch_backbone(nn.Module):
                 self.padding_patch_layer = nn.ReplicationPad1d((0, stride))
                 patch_num += 1
             self.backbones.append(TSTiEncoder(c_in, patch_num=patch_num, patch_len=p_len, max_seq_len=max_seq_len,
-                                          n_layers=n_layers, d_model=d_model, n_heads=n_heads, d_k=d_k, d_v=d_v, d_ff=d_ff,
-                                          attn_dropout=attn_dropout, dropout=dropout, act=act, key_padding_mask=key_padding_mask, padding_var=padding_var,
-                                          attn_mask=attn_mask, res_attention=res_attention, pre_norm=pre_norm, store_attn=store_attn,
-                                          pe=pe, learn_pe=learn_pe, verbose=verbose, **kwargs))
+                                        n_layers=n_layers, d_model=d_model, n_heads=n_heads, d_k=d_k, d_v=d_v, d_ff=d_ff,
+                                        attn_dropout=attn_dropout, dropout=dropout, act=act, key_padding_mask=key_padding_mask, padding_var=padding_var,
+                                        attn_mask=attn_mask, res_attention=res_attention, pre_norm=pre_norm, store_attn=store_attn,
+                                        pe=pe, learn_pe=learn_pe, verbose=verbose, **kwargs))
             # Head
             head_nf = d_model * patch_num
             if self.pretrain_head:
@@ -64,14 +66,14 @@ class MultiPatch_backbone(nn.Module):
         for i, p_len in enumerate(self.patch_lens):
             x = z
             if self.revin:
-                x = x.permute(0,2,1)
+                x = x.permute(0,2,1) # B, C, L --> B, L, C
                 x = self.revin_layer(x, 'norm')
-                x = x.permute(0,2,1)
+                x = x.permute(0,2,1) # B, L, C --> B, C, L
 
             # do patching
             if self.padding_patch == 'end':
                 x = self.padding_patch_layer(x)
-            x = x.unfold(dimension=-1, size=p_len, step=self.stride)                   # z: [bs x nvars x patch_num x patch_len]
+            x = x.unfold(dimension=-1, size=p_len, step=self.stride)                   # z: # B, C, L --> [bs x nvars x patch_num x patch_len]
             x = x.permute(0,1,3,2)                                                              # z: [bs x nvars x patch_len x patch_num]
 
             # model
@@ -187,19 +189,21 @@ class TSTEncoder(nn.Module):
         super().__init__()
 
         self.layers = nn.ModuleList([TSTEncoderLayer(q_len, d_model, n_heads=n_heads, d_k=d_k, d_v=d_v, d_ff=d_ff, norm=norm,
-                                                      attn_dropout=attn_dropout, dropout=dropout,
-                                                      activation=activation, res_attention=res_attention,
-                                                      pre_norm=pre_norm, store_attn=store_attn) for i in range(n_layers)])
+                                                    attn_dropout=attn_dropout, dropout=dropout,
+                                                    activation=activation, res_attention=res_attention,
+                                                    pre_norm=pre_norm, store_attn=store_attn) for i in range(n_layers)])
         self.res_attention = res_attention
 
     def forward(self, src:Tensor, key_padding_mask:Optional[Tensor]=None, attn_mask:Optional[Tensor]=None):
         output = src
         scores = None
         if self.res_attention:
-            for mod in self.layers: output, scores = mod(output, prev=scores, key_padding_mask=key_padding_mask, attn_mask=attn_mask)
+            for mod in self.layers: 
+                output, scores = mod(output, prev=scores, key_padding_mask=key_padding_mask, attn_mask=attn_mask)
             return output
         else:
-            for mod in self.layers: output = mod(output, key_padding_mask=key_padding_mask, attn_mask=attn_mask)
+            for mod in self.layers: 
+                output = mod(output, key_padding_mask=key_padding_mask, attn_mask=attn_mask)
             return output
 
 
@@ -241,7 +245,7 @@ class TSTEncoderLayer(nn.Module):
 
 
     def forward(self, src:Tensor, prev:Optional[Tensor]=None, key_padding_mask:Optional[Tensor]=None, attn_mask:Optional[Tensor]=None) -> Tensor:
-
+        # src size: [bs * nvars x patch_num x d_model]
         # Multi-Head attention sublayer
         if self.pre_norm:
             src = self.norm_attn(src)
