@@ -6,7 +6,7 @@ if [ ! -d "./logs/LongForecasting" ]; then
     mkdir ./logs/LongForecasting
 fi
 seq_len=336
-model_name=iTransformer
+model_name=PatchTST
 
 root_path_name=../../dataset/
 # data_path_name=train_dev1.csv
@@ -32,18 +32,18 @@ do
         --pred_len $pred_len \
         --enc_in 4 \
         --e_layers 3 \
-        --n_heads 4 \
-        --d_model 16 \
-        --d_ff 128 \
+        --n_heads 16 \
+        --d_model 128 \
+        --d_ff 256 \
         --dropout 0.3\
         --fc_dropout 0.3\
         --head_dropout 0\
-        --patch_len '357'\
-        --stride 5\
+        --patch_len 16\
+        --stride 8\
+        --individual 1\
         --des 'Exp' \
-        --train_epochs 50\
+        --train_epochs 100\
         --itr 5 \
-        --batch_size 128 \
-        --learning_rate 0.001 >logs/LongForecasting/$model_name'_'$model_id_name'_'$seq_len'_bz128_epoch50_lr0.001_'$pred_len.log
+        --batch_size 512 \
+        --learning_rate 0.001 >logs/LongForecasting/$model_name'_'$model_id_name'_'$seq_len'_individual_bz512_epoch50_lr0.001_'$pred_len.log
 done
-

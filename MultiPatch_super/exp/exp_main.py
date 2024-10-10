@@ -56,8 +56,9 @@ class Exp_Main(Exp_Basic):
         return model_optim
 
     def _select_criterion(self):
-        criterion = nn.MSELoss()
-        return criterion
+        criterion_train = nn.HuberLoss()
+        criterion_test = nn.MSELoss()
+        return criterion_train, criterion_test
 
     def vali(self, vali_data, vali_loader, criterion):
         total_loss = []
@@ -120,7 +121,7 @@ class Exp_Main(Exp_Basic):
         early_stopping = EarlyStopping(patience=self.args.patience, verbose=True)
 
         model_optim = self._select_optimizer()
-        criterion = self._select_criterion()
+        criterion_train, criterion_test = self._select_criterion()
 
         if self.args.use_amp:
             scaler = torch.amp.GradScaler()
@@ -167,7 +168,7 @@ class Exp_Main(Exp_Basic):
                         f_dim = -1 if self.args.features == 'MS' else 0
                         outputs = outputs[:, -self.args.pred_len:, f_dim:]
                         batch_y = batch_y[:, -self.args.pred_len:, f_dim:].to(self.device)
-                        loss = criterion(outputs, batch_y)
+                        loss = criterion_train(outputs, batch_y)
                         train_loss.append(loss.item())
                 else:
                     if 'Linear' in self.args.model or 'Multi' in self.args.model or 'LSTM' in self.args.model:
@@ -182,7 +183,7 @@ class Exp_Main(Exp_Basic):
                     f_dim = -1 if self.args.features == 'MS' else 0
                     outputs = outputs[:, -self.args.pred_len:, f_dim:]
                     batch_y = batch_y[:, -self.args.pred_len:, f_dim:].to(self.device)
-                    loss = criterion(outputs, batch_y)
+                    loss = criterion_train(outputs, batch_y)
                     train_loss.append(loss.item())
 
                 if (i + 1) % 100 == 0:
@@ -210,8 +211,8 @@ class Exp_Main(Exp_Basic):
                                                                                     mem_reserved))
             print("Epoch: {} cost time: {}".format(epoch + 1, time.time() - epoch_time))
             train_loss = np.average(train_loss)
-            vali_loss = self.vali(vali_data, vali_loader, criterion)
-            test_loss = self.vali(test_data, test_loader, criterion)
+            vali_loss = self.vali(vali_data, vali_loader, criterion_test)
+            test_loss = self.vali(test_data, test_loader, criterion_test)
             test_pool_ids = test_data.df_test['pool_id'].unique()
 
             print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f} Test Loss: {4:.7f} Test pool id: {5}".format(

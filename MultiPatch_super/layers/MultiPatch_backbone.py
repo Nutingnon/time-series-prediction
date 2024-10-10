@@ -27,7 +27,7 @@ class MultiPatch_backbone(nn.Module):
         # RevIn
         self.revin = revin
         if self.revin: self.revin_layer = RevIN(c_in, affine=affine, subtract_last=subtract_last)
-        self.patch_len = patch_len
+        self.patch_len = patch_len.split(",")
         self.stride = stride
         self.padding_patch = padding_patch
         self.n_vars = c_in

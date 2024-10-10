@@ -16,3 +16,33 @@ mse:0.08255777508020401, mae:0.08946101367473602, rse:0.2398100644350052
 336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
 mse:0.13150794804096222, mae:0.12258527427911758, rse:0.3053160607814789
 
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.16418896615505219, mae:0.14644008874893188, rse:0.34606635570526123
+
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_1  
+mse:0.0317215621471405, mae:0.0703088566660881, rse:0.17464333772659302
+
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_2  
+mse:0.02966972067952156, mae:0.08209072798490524, rse:0.1498395949602127
+
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_3  
+mse:0.09637338668107986, mae:0.09555559605360031, rse:0.25831809639930725
+
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_4  
+mse:0.07053776830434799, mae:0.08492611348628998, rse:0.22360654175281525
+
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.09154833853244781, mae:0.09911967068910599, rse:0.2584119439125061
+
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_1  
+mse:0.027930865064263344, mae:0.0647045448422432, rse:0.16387660801410675
+
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_2  
+mse:0.02584773302078247, mae:0.07688640803098679, rse:0.1398559957742691
+
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_3  
+mse:0.06984494626522064, mae:0.07880672067403793, rse:0.21990938484668732
+
+336_192_MultiPatch_filtered_dev_ftM_sl336_ll48_pl192_dm128_nh8_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_4  
+mse:0.054822102189064026, mae:0.0696801096200943, rse:0.19616881012916565
+

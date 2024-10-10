@@ -37,12 +37,12 @@ do
       --d_ff 128 \
       --dropout 0.3\
       --fc_dropout 0.3\
+      --individual 1\
       --head_dropout 0\
-      --patch_len '357'\
       --stride 5\
       --des 'Exp' \
-      --train_epochs 50\
+      --train_epochs 100\
       --itr 5 \
-      --batch_size 128 \
-      --learning_rate 0.001 >logs/LongForecasting/$model_name'_'$model_id_name'_'$seq_len'_bz128_epoch50_lr0.001_'$pred_len.log
+      --batch_size 512 \
+      --learning_rate 0.01 >logs/LongForecasting/$model_name'_'$model_id_name'_'$seq_len'_bz512_epoch50_lr0.01_'$pred_len.log
 done

@@ -28,3 +28,24 @@ mse:0.09623250365257263, mae:0.10813241451978683, rse:0.25891029834747314
 336_192_DLinear_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
 mse:0.15020377933979034, mae:0.13337227702140808, rse:0.3262977600097656
 
+336_192_DLinear_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.16081346571445465, mae:0.14152784645557404, rse:0.342490553855896
+
+336_192_DLinear_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:0.05150580033659935, mae:0.09404783695936203, rse:0.2225373089313507
+
+336_192_DLinear_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.1590285450220108, mae:0.14052481949329376, rse:0.34058451652526855
+
+336_192_DLinear_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_1  
+mse:0.05115840584039688, mae:0.09363197535276413, rse:0.2217855602502823
+
+336_192_DLinear_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_2  
+mse:0.03636012598872185, mae:0.10371009260416031, rse:0.1658756136894226
+
+336_192_DLinear_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_3  
+mse:0.09571345150470734, mae:0.09766591340303421, rse:0.25743213295936584
+
+336_192_DLinear_filtered_dev_ftM_sl336_ll48_pl192_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_4  
+mse:0.15029993653297424, mae:0.1274968832731247, rse:0.3264021575450897
+
